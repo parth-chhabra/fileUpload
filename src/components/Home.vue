@@ -53,7 +53,7 @@ export default {
     methods: {
         upload(fileList) {
             const file = fileList[0];
-            
+
             const name = file.name;
             const size = file.size.toString();
             const fileId = `${file.name}-${file.lastModified}`;
@@ -61,7 +61,7 @@ export default {
             const formData = new FormData();
             formData.append('image', fileList[0]);
             let headers = {};
-            
+
             if (this.login) {
                 headers = {
                     user: this.login,
@@ -77,7 +77,7 @@ export default {
                 }
                 this.alreadyPresent = Math.round(100 * res.data.uploaded / size);
                 this.uploadPercentage = this.alreadyPresent;
-                if (res.data.uploaded == 100) {
+                if (res.data.uploaded == size) {
                     this.present = true;
                 }
                 else {
