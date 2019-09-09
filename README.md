@@ -13,6 +13,9 @@ cd fileUpload
 yarn
 ```
 ```
+npm run build
+```
+```
 npm start
 ```
 
